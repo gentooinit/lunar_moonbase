@@ -1,0 +1,5 @@
+depends gtk+-3
+depends glib-2
+depends intltool
+
+optional_depends "libnotify4" "" "" "for notification support"

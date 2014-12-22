@@ -1,0 +1,12 @@
+          MODULE=zathura-pdf-poppler
+         VERSION=0.2.5
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://pwmt.org/projects/$MODULE/download/
+      SOURCE_VFY=sha1:7baa6b12526c13c4088eb206147d6cb3539f53b8
+        WEB_SITE=https://pwmt.org/projects/$MODULE/
+         ENTERED=20141118
+         UPDATED=20141118
+           SHORT="Adds PDF support to zathura by using the poppler rendering engine."
+cat << EOF
+The zathura-pdf-poppler plugin adds PDF support to zathura by using the poppler rendering engine.
+EOF

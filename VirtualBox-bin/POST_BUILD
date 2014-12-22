@@ -1,0 +1,67 @@
+depmod
+
+# Create users group
+groupadd -r -f vboxusers
+
+INSTALLATION_DIR=/opt/VirtualBox
+
+install_create_usb_node_for_sysfs() {
+    # Create a usb device node for a given sysfs path
+    path="$1"           # sysfs path for the device
+    usb_createnode="$2" # Path to the USB device node creation script
+    usb_group="$3"      # The group to give ownership of the node to
+    if test -r "${path}/dev"; then
+        dev="`$EXTERN cat "${path}/dev" 2> /dev/null`"
+        major="`expr "$dev" : '\(.*\):' 2> /dev/null`"
+        minor="`expr "$dev" : '.*:\(.*\)' 2> /dev/null`"
+        class="`cat ${path}/bDeviceClass 2> /dev/null`"
+        sh "${usb_createnode}" "$major" "$minor" "$class" \
+              "${usb_group}" 2>/dev/null
+    fi
+}
+
+sysfs_usb_devices="/sys/bus/usb/devices/*"
+
+install_device_node_setup() {
+    VBOXDRV_GRP="$1"      # The group that should own /dev/vboxdrv
+    VBOXDRV_MODE="$2"     # The mode to be used for /dev/vboxdrv
+    INSTALLATION_DIR="$3" # The directory VirtualBox is installed in
+    USB_GROUP="$4"        # The group that should own the /dev/vboxusb device
+                          # nodes unless INSTALL_NO_GROUP=1 in
+                          # /etc/default/virtualbox.  Optional.
+    usb_createnode="$INSTALLATION_DIR/VBoxCreateUSBNode.sh"
+
+    # Build our device tree
+    for i in ${sysfs_usb_devices}; do  # This line intentionally without quotes.
+        install_create_usb_node_for_sysfs "$i" "${usb_createnode}" \
+                                                  "${usb_group}"
+    done
+}
+
+install_device_node_setup root 0600 "$INSTALLATION_DIR"
+
+#lunar hax, skip sanity check
+plugin_call() {
+    local REQUESTED_TYPE COUNT THIS_TYPE THIS_HANDLER RETVAL
+	debug_msg "plugin_call($@)"
+	# scan available plugins for plugin_type $1 and pass args to it
+	REQUESTED_TYPE=$1
+	shift
+	for ((COUNT=0; COUNT < $LUNAR_PLUGIN_COUNT; COUNT++)); do
+		THIS_TYPE=${LUNAR_PLUGINS[$COUNT]%%:*}
+		THIS_HANDLER=${LUNAR_PLUGINS[$COUNT]#*:}
+		if [ "$REQUESTED_TYPE" == "$THIS_TYPE" -a "plugin_sanity_post_build" != "$THIS_HANDLER" ]; then
+			# we have identified a valid plugin for this type
+			$THIS_HANDLER $@
+			RETVAL=$?
+			if [ $RETVAL -eq 2 ]; then
+				continue
+			else
+				debug_msg "plugin $THIS_HANDLER returned \"$RETVAL\""
+				return $RETVAL
+			fi
+		fi
+	done
+	debug_msg "Finished running all plugins for type \"$REQUESTED_TYPE\""
+	return 2
+}

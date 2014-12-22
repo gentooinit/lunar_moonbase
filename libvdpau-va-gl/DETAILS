@@ -1,0 +1,16 @@
+          MODULE=libvdpau-va-gl
+         VERSION=0.3.4
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://github.com/i-rinat/libvdpau-va-gl/releases/download/v$VERSION
+      SOURCE_VFY=sha1:8cc8c3cc3f1ea02bdfabd627a3b3d943ef60519c
+        WEB_SITE=https://github.com/i-rinat/libvdpau-va-gl/
+         ENTERED=20141222
+         UPDATED=20141222
+           SHORT="A VDPAU driver with VA-API/OpenGL backend"
+cat << EOF
+libvdpau-va-gl uses OpenGL under the hood to accelerate drawing 
+and scaling and VA-API (if available) to accelerate video decoding. 
+For now VA-API is available on some Intel chips, 
+and on some AMD video adapters with help of xvba-va-driver. 
+OpenGL is available, you know, on systems with OpenGL available.
+EOF

@@ -1,0 +1,12 @@
+if ! grep -q CONFIGURED $MODULE_CONFIG ; then
+  if query "Enable GTK3 IM Support?${PROBLEM_COLOR}(required gtk3)${DEFAULT_COLOR}" n ; then
+    OPTS="$OPTS -DENABLE_GTK3_IM_MODULE=ON"
+  fi
+
+  if query "Enable QT IM Support?${PROBLEM_COLOR}(required QT4)${DEFAULT_COLOR}" n ; then
+    OPTS="$OPTS -DENABLE_QT_IM_MODULE=ON"
+  fi
+
+  echo 'CONFIGURED="y"' >> $MODULE_CONFIG
+  echo 'OPTS='\"$OPTS\" >> $MODULE_CONFIG
+fi

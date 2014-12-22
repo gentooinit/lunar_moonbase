@@ -1,0 +1,8 @@
+[Unit]
+Description=VirtualBox Autostart
+
+[Service]
+ExecStart=/etc/init.d/vboxautostart-service start
+
+[Install]
+WantedBy=basic.target

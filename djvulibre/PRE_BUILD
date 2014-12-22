@@ -1,0 +1,2 @@
+default_pre_build &&
+patch_it $SCRIPT_DIRECTORY/configure.patch 0

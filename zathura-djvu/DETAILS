@@ -1,0 +1,12 @@
+          MODULE=zathura-djvu
+         VERSION=0.2.4
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://pwmt.org/projects/$MODULE/download/
+      SOURCE_VFY=sha1:9871ff7daafbb4a1cdecde244ebcaf490b8fe1d3
+        WEB_SITE=https://pwmt.org/projects/$MODULE/
+         ENTERED=20141118
+         UPDATED=20141118
+           SHORT="Adds DjVu support to zathura by using the djvulibre library."
+cat << EOF
+The zathura-djvu plugin adds DjVu support to zathura by using the djvulibre library.
+EOF

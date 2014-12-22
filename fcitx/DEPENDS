@@ -1,0 +1,13 @@
+depends gcc
+depends make
+depends cmake
+depends intltool
+
+optional_depends "gtk+-2" "" "" "for GTK2 input method module"
+optional_depends "gtk+-3" "" "" "for GTK3 input method module"
+optional_depends "qt4" "" "" "for QT4 input method module"
+optional_depends "cairo" "" "" "for Classic UI"
+optional_depends "pango" "" "" "for Classic UI"
+optional_depends "dbus" "" "" "for all im module, kimpanel"
+optional_depends "dbus-glib" "" "" "for gtk im module"
+optional_depends "gobject-introspection" "" "" ""

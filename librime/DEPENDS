@@ -1,0 +1,6 @@
+depends cmake
+depends boost
+depends glog
+depends kyotocabinet
+depends opencc
+depends yaml-cpp

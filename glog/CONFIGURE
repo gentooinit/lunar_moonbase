@@ -1,0 +1,2 @@
+OPTS="$OPTS --enable-frame-pointers"
+echo 'OPTS='\"$OPTS\" >> $MODULE_CONFIG

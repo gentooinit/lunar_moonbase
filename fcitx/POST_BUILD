@@ -1,0 +1,12 @@
+echo "Custom post_build"
+
+if [ $(wc -l "$INSTALLWATCHFILE" | awk '{print$1}') == "0" ] &&
+    [ "$PROFILE" != "yes" ] ; then
+  message "${PROBLEM_COLOR}WARNING: ${DEFAULT_COLOR}${FILE_COLOR}BUILD${DEFAULT_COLOR}${PROBLEM_COLOR} does not call prepare_install or installs zero files!${DEFAULT_COLOR}"
+fi
+
+update_plugin $MODULE install
+
+ldconfig
+release_saved_libraries
+cd /

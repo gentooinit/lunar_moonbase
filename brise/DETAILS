@@ -1,0 +1,20 @@
+          MODULE=brise
+         VERSION=0.30
+          SOURCE=$MODULE-$VERSION.tar.gz
+SOURCE_DIRECTORY=$MODULE
+      SOURCE_URL=$SFORGE_URL/rimeime.mirror/
+      SOURCE_VFY=sha1:74e05d49b80fbcb1266bda39d1a2651fe163b438
+        WEB_SITE=http://code.google.com/p/rimeime/
+         ENTERED=20141116
+         UPDATED=20141116
+           SHORT="La brise: the official Rime schema repository."
+cat << EOF
+providing:
+- default.yaml: Rime default settings
+- symbols.yaml: punctuation and special characters
+- essay: a vocabulary and language model
+- preset schemata: luna_pinyin, terra_pinyin, bopomofo, cangjie5, stroke
+- supplemental schemata: wubi86, quick5, double_pinyin, combo_pinyin,
+  jyutping, wugniu, ipa_xsampa, sampheng, zyenpheng
+- extra schemata: (included in the source package but not installed)
+EOF

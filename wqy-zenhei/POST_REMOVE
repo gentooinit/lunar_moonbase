@@ -1,0 +1,5 @@
+FONT_CFG=/etc/fonts/conf.d
+
+[ -h $FONT_CFG/44-wqy-zenhei.conf ] && rm -rf $FONT_CFG/44-wqy-zenhei.conf
+[ -h $FONT_CFG/66-wqy-zenhei-sharp.conf ] && rm -rf $FONT_CFG/66-wqy-zenhei-sharp.conf
+[ -h $FONT_CFG/66-wqy-zenhei-sharp-no13px.conf ] && rm -rf $FONT_CFG/66-wqy-zenhei-sharp-no13px.conf

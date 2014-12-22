@@ -1,0 +1,14 @@
+          MODULE=glog
+         VERSION=0.3.3
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=$SFORGE_URL/google-glog.mirror/
+      SOURCE_VFY=sha1:ed40c26ecffc5ad47c618684415799ebaaa30d65
+        WEB_SITE=http://code.google.com/p/google-glog/
+         ENTERED=20141116
+         UPDATED=20141116
+           SHORT="A C++ implementation of the Google logging module."
+
+cat << EOF
+The glog library implements application-level logging. 
+This library provides logging APIs based on C++-style streams and various helper macros.
+EOF

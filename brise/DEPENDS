@@ -1,0 +1,2 @@
+depends kyotocabinet
+depends librime

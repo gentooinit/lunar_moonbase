@@ -1,0 +1,25 @@
+unpack $SOURCE &&
+cd $SOURCE_DIRECTORY &&
+./amd-driver-installer-$INNER_VERSION-x86.x86_64.run --extract working &&
+cd working/common/lib/modules/fglrx/build_mod &&
+patch_it $SCRIPT_DIRECTORY/hotplug_fix.patch 0 &&
+cd ../../../../../ &&
+patch_it $SCRIPT_DIRECTORY/default_policy_fixed.patch 0 &&
+patch_it $SCRIPT_DIRECTORY/ati-installer-fixed.patch 0
+
+if [ -f "/usr/lib/libGL.so.1.2.0" -a ! -f "/usr/lib/FGL.renamed.libGL.so.1.2.0" ]; then
+	mv /usr/lib/libGL.so.1.2.0 /usr/lib/FGL.renamed.libGL.so.1.2.0 
+fi
+
+if [ -f "/usr/lib/xorg/modules/extensions/libglx.so" -a ! -f "/usr/lib/xorg/modules/extensions/FGL.renamed.libglx.so" ]; then
+	mv /usr/lib/xorg/modules/extensions/libglx.so /usr/lib/xorg/modules/extensions/FGL.renamed.libglx.so 
+elif [ -h "/usr/lib/xorg/modules/extensions/libglx.so" ]; then
+	rm -f /usr/lib/xorg/modules/extensions/libglx.so
+fi
+
+for libgl in `ls -1 /usr/lib/libGL.so*`;
+do
+	if [ -h "$libgl" ]; then
+		rm -f "$libgl"
+	fi
+done

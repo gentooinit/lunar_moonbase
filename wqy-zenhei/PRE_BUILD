@@ -1,0 +1,4 @@
+default_pre_build &&
+sed -i -e '9,10i\        </test>\n\        <test qual="any" name="family">' 44-wqy-zenhei.conf &&
+sed -i -e '22,23i\        </test>\n\        <test qual="any" name="family">' -e '8,9i\        </test>\n\        <test qual="any" name="family">' 66-wqy-zenhei-sharp.conf &&
+sed -i -e '9,10i\        </test>\n\        <test qual="any" name="family">' 66-wqy-zenhei-sharp-no13px.conf 

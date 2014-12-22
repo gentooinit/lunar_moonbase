@@ -1,0 +1,6 @@
+#Update module dependencies
+depmod &&
+/sbin/ldconfig &&
+aticonfig --del-pcs-key=LDC,ReleaseVersion 
+aticonfig --del-pcs-key=LDC,Catalyst_Version
+aticonfig --initial -f

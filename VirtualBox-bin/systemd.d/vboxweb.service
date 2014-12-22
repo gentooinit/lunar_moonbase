@@ -1,0 +1,8 @@
+[Unit]
+Description=VirtualBox Web services
+
+[Service]
+ExecStart=/etc/init.d/vboxweb-service start
+
+[Install]
+WantedBy=basic.target

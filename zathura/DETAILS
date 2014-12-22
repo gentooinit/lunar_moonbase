@@ -1,0 +1,13 @@
+          MODULE=zathura
+         VERSION=0.3.2
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://pwmt.org/projects/$MODULE/download/
+      SOURCE_VFY=sha1:5a08068fbb7210e298636a73aaedce56e267a8eb
+        WEB_SITE=https://pwmt.org/projects/$MODULE/
+         ENTERED=20141118
+         UPDATED=20141118
+           SHORT="A document viewer"
+cat << EOF
+zathura is a highly customizable and functional document viewer based on the
+girara user interface library and several document libraries.
+EOF

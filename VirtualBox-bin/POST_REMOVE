@@ -1,0 +1,6 @@
+depmod
+
+# Delete users group
+groupdel vboxusers
+
+rm -rf /dev/vboxusb

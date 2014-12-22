@@ -1,0 +1,18 @@
+          MODULE=librime
+         VERSION=1.0
+          SOURCE=$MODULE-$VERSION.tar.gz
+SOURCE_DIRECTORY=$MODULE
+      SOURCE_URL=$SFORGE_URL/rimeime.mirror/
+      SOURCE_VFY=sha1:5fd6db95b039e08dadfe547e3e63962aeaa97d8c
+        WEB_SITE=http://code.google.com/p/rimeime/
+         ENTERED=20141116
+         UPDATED=20141116
+           SHORT="Rime development package"
+cat << EOF
+fetures:
+- supporting varieties of input methods, either shape-based or phonetic-based, including those for Chinese dialects
+- a built-in dictionary in traditional Chinese, easily converting to simplified Chinese via opencc
+- a modulized, extensible input method framework to create innovative input schemata in YAML syntax
+- cross-platform core library in C++, built on top of open-source technologies
+- OS-specific wrappers working consistently on Windows, Linux and OS X
+EOF

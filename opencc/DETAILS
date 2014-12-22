@@ -1,0 +1,14 @@
+          MODULE=opencc
+         VERSION=0.4.3
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=https://opencc.googlecode.com/files
+      SOURCE_VFY=sha1:4677e63fa36fb2b92a52c01df2acc83664aaf882
+        WEB_SITE=https://code.google.com/p/opencc/
+         ENTERED=20141116
+         UPDATED=20141116
+           SHORT="An opensource project for conversion between Traditional Chinese and Simplified Chinese."
+cat << EOF
+Open Chinese Convert (OpenCC, 開放中文轉換) is an opensource project for conversion between Traditional Chinese and Simpli-
+fied Chinese, supporting character-level conversion, phrase-level conversion, variant conversion and regional idioms among 
+Mainland China, Taiwan and Hong kong.
+EOF

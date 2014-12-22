@@ -1,0 +1,17 @@
+#Update module dependencies
+depmod
+
+if [ -f "/usr/lib/FGL.renamed.libGL.so.1.2.0" ]; then
+	mv /usr/lib/FGL.renamed.libGL.so.1.2.0 /usr/lib/libGL.so.1.2.0
+	ln -s /usr/lib/libGL.so.1.2.0 /usr/lib/libGL.so.1
+	ln -s /usr/lib/libGL.so.1.2.0 /usr/lib/libGL.so
+fi
+
+if [ -f "/usr/lib/xorg/modules/extensions/FGL.renamed.libglx.so" ]; then
+	mv /usr/lib/xorg/modules/extensions/FGL.renamed.libglx.so /usr/lib/xorg/modules/extensions/libglx.so 
+fi
+
+/sbin/ldconfig
+
+#clean up
+rm -f /etc/X11/xorg.conf*

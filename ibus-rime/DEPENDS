@@ -1,0 +1,6 @@
+depends cmake
+depends pkgconfig
+depends librime
+depends ibus
+depends libnotify4
+depends brise

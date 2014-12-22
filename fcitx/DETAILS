@@ -1,0 +1,14 @@
+          MODULE=fcitx
+         VERSION=4.2.8.5
+	   SUB_V=_dict
+          SOURCE=$MODULE-$VERSION$SUB_V.tar.xz
+      SOURCE_URL=http://download.fcitx-im.org/fcitx/
+      SOURCE_VFY=sha1:64b66af5259a39efc73783cffe4193963a9872f1
+        WEB_SITE=http://fcitx-im.org/
+         ENTERED=20141116
+         UPDATED=20141116
+           SHORT="An input method framework with extension support."
+
+cat << EOF
+Fcitx [ˈfaɪtɪks] is an input method framework with extension support. Currently it supports Linux and Unix systems like freebsd. It has three built-in Input Method Engine, Pinyin, QuWei and Table-based input methods. 
+EOF
