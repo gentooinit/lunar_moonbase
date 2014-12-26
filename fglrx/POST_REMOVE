@@ -15,3 +15,11 @@ fi
 
 #clean up
 rm -f /etc/X11/xorg.conf*
+
+if module_installed AMD-APP-SDK; then
+	if query "AMD-APP-SDK is detected! Reinstall for pure CPU OpenCL support or we will remove it. Reinstall?" y; then
+		lin -rc AMD-APP-SDK
+	else
+		lrm AMD-APP-SDK
+	fi
+fi

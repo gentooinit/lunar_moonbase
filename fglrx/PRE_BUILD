@@ -1,3 +1,8 @@
+if module_installed AMD-APP-SDK; then
+	lrm AMD-APP-SDK &&
+	REINSTALL_APP=yes
+fi
+
 unpack $SOURCE &&
 cd $SOURCE_DIRECTORY &&
 ./amd-driver-installer-$INNER_VERSION-x86.x86_64.run --extract working &&

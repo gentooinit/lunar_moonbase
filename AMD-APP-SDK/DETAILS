@@ -1,0 +1,13 @@
+          MODULE=AMD-APP-SDK
+         VERSION=2.9-1.599.381
+	 ARCH_M=32
+          SOURCE=$MODULE-linux-v$VERSION-GA-x$ARCH_M.tar.bz2
+      SOURCE_URL=http://bbsdk.csdn.net/AMD/
+      SOURCE_VFY=md5:02be60779d9df3974a3e66f2dab00558
+        WEB_SITE=http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing-app-sdk/
+         ENTERED=20141125
+         UPDATED=20141125
+           SHORT="The AMD APP Software Development Kit"
+cat << EOF
+AMD OpenCL™ Accelerated Parallel Processing (APP) technology is a set of advanced hardware and software technologies that enable AMD graphics processing cores (GPU), working in concert with the system’s x86 cores (CPU), to execute heterogeneously to accelerate many applications beyond just graphics. This enables better balanced platforms capable of running demanding computing tasks faster than ever, and sets software developers on the path to optimize for AMD Accelerated Processing Units (APUs). The AMD APP Software Development Kit (SDK) is a complete development platform created by AMD to allow you to quickly and easily develop applications accelerated by AMD APP technology. The SDK provides samples, documentation, and other materials to quickly get you started leveraging accelerated compute using OpenCL™, Bolt, or C++ AMP in your C/C++ application, or Aparapi for your Java application. (Check the AMD OpenCL™ Zone for these and other tools and libraries.)
+EOF
