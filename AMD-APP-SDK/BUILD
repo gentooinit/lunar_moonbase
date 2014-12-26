@@ -13,7 +13,7 @@ if ! module_installed fglrx; then
 	install -m644 "lib/$ARCH_FULL/libOpenCL.so.1" /usr/lib/
 fi
 
-install -m644 "lib/$ARCH_FULL/libOpenCL.so" /usr/lib/ &&
+cp -af "lib/$ARCH_FULL/libOpenCL.so" /usr/lib &&
 install -m644 "lib/$ARCH_FULL/libamdoclcl$ARCH_M.so" /usr/lib/ &&
 install -m644 "lib/$ARCH_FULL/libaparapi_$ARCH_FULL.so" /usr/lib/ && 
 

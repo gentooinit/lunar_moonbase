@@ -115,7 +115,6 @@ install -m0644 -D -t /etc/ati install/etc/ati/logo_mask.xbm.example &&
 install -m0644 -D -t /etc/ati install/etc/ati/logo.xbm.example &&
 install -m0644 -D -t /etc/ati install/etc/ati/signature &&
 install -m0644 -D -t /etc/OpenCL/vendors install/etc/OpenCL/vendors/amdocl32.icd &&
-install -m0644 -D -t /usr/X11R6/lib/modules/dri install/usr/X11R6/lib/modules/dri/fglrx_dri.so &&
 install -m0755 -D -t /usr/bin install/usr/bin/amdconfig &&
 install -m0644 -D -t /lib/modules/fglrx/build_mod install/lib/modules/fglrx/build_mod/libfglrx_ip.a &&
 install -m0644 -D -t /lib/modules/fglrx/build_mod install/lib/modules/fglrx/build_mod/kcl_acpi.h &&
@@ -200,18 +199,17 @@ install -m0644 -D -t /etc/security/console.apps install/etc/security/console.app
 install -m0644 -D -t /usr/share/ati/lib install/usr/share/ati/lib/libQtCore.so.4 &&
 install -m0644 -D -t /usr/share/ati/lib install/usr/share/ati/lib/libQtGui.so.4 &&
 
-cp -f $SCRIPT_DIRECTORY/ati-fglrx.sh /etc/profile.d &&
 touch /etc/ati/atiapfuser.blb &&
 chmod a+w /etc/ati/atiapfuser.blb &&
 chmod a+s /usr/bin/amd-console-helper
 
-ln -s /usr/lib/fglrx/fglrx-libGL.so.1.2 /usr/lib/libGL.so.1.2 &&
-ln -s /usr/lib/libGL.so.1.2 /usr/lib/libGL.so.1 &&
-ln -s /usr/lib/libGL.so.1 /usr/lib/libGL.so &&
-ln -s /usr/lib/xorg/modules/extensions/fglrx/fglrx-libglx.so /usr/lib/xorg/modules/extensions/libglx.so &&
-ln -s /usr/lib/libXvBAW.so.1.0 /usr/lib/dri/fglrx_drv_video.so &&
+ln -sf /usr/lib/fglrx/fglrx-libGL.so.1.2 /usr/lib/libGL.so.1.2 &&
+ln -sf /usr/lib/libGL.so.1.2 /usr/lib/libGL.so.1 &&
+ln -sf /usr/lib/libGL.so.1 /usr/lib/libGL.so &&
+ln -sf /usr/lib/xorg/modules/extensions/fglrx/fglrx-libglx.so /usr/lib/xorg/modules/extensions/libglx.so &&
+ln -sf /usr/lib/libXvBAW.so.1.0 /usr/lib/dri/fglrx_drv_video.so &&
 
-ln -s /etc/pam.d/su /etc/pam.d/amdcccle-su &&
+ln -sf /etc/pam.d/su /etc/pam.d/amdcccle-su &&
 
 mkdir -p /lib/modules/${KVER}/kernel/drivers/char/drm &&
 cp -af install/lib/modules/fglrx/fglrx.$KVER.ko \
