@@ -1,0 +1,13 @@
+          MODULE=openocd
+         VERSION=0.8.0
+          SOURCE=$MODULE-$VERSION.tar.bz2
+      SOURCE_URL=$SFORGE_URL/$MODULE
+      SOURCE_VFY=sha1:10bf9eeb54e03083cb1a101785b2d69fbdf18f31
+        WEB_SITE=http://openocd.sourceforge.net/
+         ENTERED=20150116
+         UPDATED=20150116
+           SHORT="Free and Open On-Chip Debugging, In-System Programming and Boundary-Scan Testing"
+cat << EOF
+OpenOCD, the Open On-Chip Debugger has been created by Dominic Rath 
+as part of a diploma thesis at the University of Applied Sciences, FH-Augsburg. 
+EOF
