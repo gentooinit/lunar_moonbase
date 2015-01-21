@@ -1,12 +1,12 @@
           MODULE=pepperflash
-         VERSION=16.0.0.235
+         VERSION=16.0.0.257
           SOURCE=google-chrome-stable_current_i386.deb
       SOURCE_URL=https://dl.google.com/linux/direct/
 SOURCE_DIRECTORY=$BUILD_DIRECTORY/$MODULE-$VERSION
-      SOURCE_VFY=sha256:3164b563a5520707ddbab06312015254aab54bdf0b54d0e82dc5ca6f0bb506da
+      SOURCE_VFY=sha256:cc4cb4162177c6fb981888969b911f78c17ad7559a23f88e5d6c8197d2707003
         WEB_SITE=https://www.google.com/chrome/browser/
          ENTERED=20140903
-         UPDATED=20141222
+         UPDATED=20150121
            SHORT="Pepper Flash plugin for Chromium"
 
 cat << EOF
