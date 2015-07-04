@@ -1,0 +1,14 @@
+          MODULE=reiser4progs
+         VERSION=1.0.9
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=http://sourceforge.net/projects/reiser4/files/reiser4-utils/$MODULE
+      SOURCE_VFY=sha1:9704682dd0739704e3d567d05256bd48cca3cbfa
+        WEB_SITE=$SFORGE_URL/reiser4
+         ENTERED=20150704
+         UPDATED=20150704
+           SHORT="Utilities for the Reiser4 file system"
+
+cat << EOF
+It contains the library for reiser4 filesystem access and manipulation and
+reiser4 utilities.
+EOF

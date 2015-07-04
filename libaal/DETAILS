@@ -1,0 +1,14 @@
+          MODULE=libaal
+         VERSION=1.0.6
+          SOURCE=$MODULE-$VERSION.tar.gz
+      SOURCE_URL=http://sourceforge.net/projects/reiser4/files/reiser4-utils/$MODULE
+      SOURCE_VFY=sha1:ee278d8c257d6887494a610123c13a76d639249c
+        WEB_SITE=http://reiser4.sourceforge.net/
+         ENTERED=20150704
+         UPDATED=20150704
+           SHORT="lib for reiser4progs"
+
+cat <<EOF
+This is a library, that provides application abstraction mechanism.
+It includes device abstraction, libc independence code, etc.
+EOF
