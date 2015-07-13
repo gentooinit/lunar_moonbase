@@ -79,7 +79,7 @@ mkdir -p -m 755 /etc/vbox &&
 cp $SCRIPT_DIRECTORY/vbox.cfg /etc/vbox &&
 
 mkdir -p -m 755 /etc/init.d &&
-cp -af vboxdrv.sh /etc/init.d/vboxdrv &&
-cp -af vboxballoonctrl-service.sh /etc/init.d/vboxballoonctrl-service &&
-cp -af vboxautostart-service.sh /etc/init.d/vboxautostart-service &&
-cp -af vboxweb-service.sh /etc/init.d/vboxweb-service
+cp -f vboxdrv.sh /etc/init.d/vboxdrv &&
+cp -f vboxballoonctrl-service.sh /etc/init.d/vboxballoonctrl-service &&
+cp -f vboxautostart-service.sh /etc/init.d/vboxautostart-service &&
+cp -f vboxweb-service.sh /etc/init.d/vboxweb-service

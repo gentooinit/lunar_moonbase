@@ -1,12 +1,12 @@
           MODULE=VirtualBox-bin
-         VERSION=4.3.20
+         VERSION=5.0.0
 	 ARCH_M=x86
-          SOURCE=VirtualBox-$VERSION-96996-Linux_$ARCH_M.run
+          SOURCE=VirtualBox-$VERSION-101573-Linux_$ARCH_M.run
       SOURCE_URL=http://download.virtualbox.org/virtualbox/$VERSION
-      SOURCE_VFY=sha256:cd11e4db474924d25004c38455c0114d43f7826590eb85057ecf4cc89e591099
+      SOURCE_VFY=sha256:fddb7946ae68f235ef07a88dfc57130efd2c4e02ae76c9d809c30ecec8896905
         WEB_SITE=http://virtualbox.org
          ENTERED=20141219
-         UPDATED=20141219
+         UPDATED=20150713
            SHORT="Full virtualizer for x86 hardware"
 
 cat << EOF
