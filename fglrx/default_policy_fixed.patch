@@ -1,10 +1,11 @@
---- default_policy_org.sh	2014-12-08 17:15:54.356070273 +0800
-+++ default_policy.sh	2014-12-08 17:13:41.765890391 +0800
-@@ -27,7 +27,6 @@
+--- default_policy_org.sh	2017-05-21 10:22:53.469526853 +0800
++++ default_policy.sh	2017-05-21 10:23:00.950634783 +0800
+@@ -27,8 +27,6 @@
  #   - ati-installer.sh
  #   - buildpkg.d/b30specfile.sh
  
 -alias echo=/bin/echo
- 
+-
  checksh()
  {
+     . ./check.sh $@

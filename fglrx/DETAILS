@@ -1,13 +1,13 @@
           MODULE=fglrx
-         VERSION=14.12
-	 INNER_VERSION=14.501.1003
+         VERSION=15.12
+	 INNER_VERSION=15.302
 	 SOURCE_DIRECTORY=$MODULE-$INNER_VERSION
-          SOURCE=amd-catalyst-omega-14.12-linux-run-installers.zip
+          SOURCE=radeon-crimson-15.12-15.302-151217a-297685e.zip
       SOURCE_URL=http://www2.ati.com/drivers/linux/
-      SOURCE_VFY=sha1:eddf6e0d8e497cb0202868b17c01934effed0f21
+      SOURCE_VFY=sha1:c81338b498e979038cf4673425ea22cdcde7e797
         WEB_SITE=http://www.amd.com/
          ENTERED=20141208
-         UPDATED=20141215
+         UPDATED=20170521
          LICENSE="proprietary"
            SHORT="Proprietary X.org driver for the AMD ATI Radeon GPUs"
 cat << EOF

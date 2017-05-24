@@ -1,6 +1,6 @@
---- ati-installer_org.sh	2014-12-08 16:28:06.907783143 +0800
-+++ ati-installer.sh	2014-12-08 17:13:41.769223913 +0800
-@@ -944,8 +944,6 @@
+--- ati-installer_org.sh	2017-05-21 09:47:17.364123956 +0800
++++ ati-installer.sh	2017-05-21 09:58:30.385290059 +0800
+@@ -952,8 +952,6 @@
  
  # Script execution starts here
  
@@ -9,11 +9,10 @@
  # ensure the working directory is where the script resides
  scriptdir=`dirname "$0"`
  curdir=`pwd`
-@@ -1481,34 +1479,9 @@
-                           ${TmpDrvFilesDir}/${OPENCL_LIB_64}
+@@ -1531,31 +1529,6 @@
                      cp -R arch/${ArchDir}/etc/OpenCL/vendors/* \
                            ${TmpDrvFilesDir}/${OPENCL_CONFIG}
--                      
+                       
 -                    ### Copy 32-bit libraries even if using a 64-bit system 
 -                    
 -                    cp -R arch/x86/usr/X11R6/lib/libfglrx*.* \
@@ -32,28 +31,23 @@
 -                          ${TmpDrvFilesDir}/${ATI_XLIB_32}
 -                    cp -R arch/x86/usr/X11R6/lib/modules/dri/*.* \
 -                          ${TmpDrvFilesDir}/${ATI_3D_DRV_32}
--                    cp -R arch/x86/usr/lib/libamdocl32*.* \
+-                    cp -R arch/x86/usr/lib/libamdocl*.* \
 -                          ${TmpDrvFilesDir}/${OPENCL_LIB_32}
 -                    cp -R arch/x86/usr/lib/libOpenCL*.* \
--                          ${TmpDrvFilesDir}/${OPENCL_LIB_32}
--		    cp -R arch/x86/usr/lib/libamdhsasc*.* \
 -                          ${TmpDrvFilesDir}/${OPENCL_LIB_32}
 -                    cp -R arch/x86/etc/OpenCL/vendors/* \
 -                          ${TmpDrvFilesDir}/${OPENCL_CONFIG}
 -                          
-+
-+		    rm -r ${TmpDrvFilesDir}/${ATI_XLIB_32}
-+
                  else
  
                      cp -R arch/${ArchDir}/usr/X11R6/lib/libfglrx*.* \
-@@ -1633,6 +1606,9 @@
-                         ln -s ${ATI_3D_DRV_64}/fglrx_dri.so ${TmpDrvFilesDir}/usr/X11R6/lib64/modules/dri/fglrx_dri.so
+@@ -1694,6 +1667,9 @@
                      fi
                  fi
-+		
+ 
 +		#end of install
 +		exit 0
- 
++
                  # replace strings in setup.glade (XML file)
                  SETUP_GLADE="./setup.data/setup.glade"
+                 ATI_LOG_EXP=$( echo ${ATI_LOG} | sed -e 's/\//\\\//g' )

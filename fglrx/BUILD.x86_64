@@ -75,7 +75,7 @@ install -m0644 -D -t /usr/lib/xorg/modules install/usr/lib/xorg/modules/amdxmm.s
 install -m0755 -D -t /usr/lib/fglrx install/usr/lib/fglrx/switchlibGL &&
 install -m0755 -D -t /usr/lib/fglrx install/usr/lib/fglrx/switchlibglx &&
 install -m0644 -D -t /usr/lib/xorg/modules/extensions/fglrx install/usr/lib/xorg/modules/extensions/fglrx/fglrx-libglx.so &&
-install -m0644 -D -t /usr/lib install/usr/lib/libamdhsasc64.so &&
+install -m0644 -D -t /usr/lib install/usr/lib/libamdocl12cl64.so &&
 install -m0644 -D -t /usr/lib install/usr/lib/libamdocl64.so &&
 install -m0644 -D -t /usr/lib install/usr/lib/libAMDXvBA.cap &&
 install -m0644 -D -t /usr/lib install/usr/lib/libAMDXvBA.so.1.0 &&
