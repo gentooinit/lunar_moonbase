@@ -12,12 +12,11 @@ if ! module_installed fglrx; then
 	install -m755 "bin/$ARCH_FULL/clinfo" /usr/bin/ &&
 	install -m644 "lib/$ARCH_FULL/libamdocl12$ARCH_M.so" /usr/lib/ &&
 
-	install -m644 "lib/$ARCH_FULL/libamdocl$ARCH_M.so" /usr/lib/ &&
-	install -m644 "lib/$ARCH_FULL/libOpenCL.so.1" /usr/lib/
+	install -m644 "lib/$ARCH_FULL/sdk/libamdocl$ARCH_M.so" /usr/lib/ &&
+	install -m644 "lib/$ARCH_FULL/sdk/libOpenCL.so.1" /usr/lib/
 fi
 
 ln -rs /usr/lib/libOpenCL.so.1 /usr/lib/libOpenCL.so
-cp -af "lib/$ARCH_FULL/libhsail.a" /usr/lib
 
 if [ ! -e "/usr/lib/libGLEW.so" ]; then
 	install -m644 "lib/$ARCH_FULL/libGLEW.so" /usr/lib/
