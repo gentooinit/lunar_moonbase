@@ -1,6 +1,6 @@
---- ati-installer_org.sh	2017-05-21 09:47:17.364123956 +0800
-+++ ati-installer.sh	2017-05-21 09:58:30.385290059 +0800
-@@ -952,8 +952,6 @@
+--- ati-installer_org.sh	2017-05-25 21:39:58.215857643 +0800
++++ ati-installer.sh	2017-05-25 21:40:36.023613478 +0800
+@@ -945,8 +945,6 @@
  
  # Script execution starts here
  
@@ -9,7 +9,7 @@
  # ensure the working directory is where the script resides
  scriptdir=`dirname "$0"`
  curdir=`pwd`
-@@ -1531,31 +1529,6 @@
+@@ -1524,31 +1522,6 @@
                      cp -R arch/${ArchDir}/etc/OpenCL/vendors/* \
                            ${TmpDrvFilesDir}/${OPENCL_CONFIG}
                        
@@ -41,11 +41,10 @@
                  else
  
                      cp -R arch/${ArchDir}/usr/X11R6/lib/libfglrx*.* \
-@@ -1694,6 +1667,9 @@
+@@ -1679,6 +1652,8 @@
                      fi
                  fi
  
-+		#end of install
 +		exit 0
 +
                  # replace strings in setup.glade (XML file)

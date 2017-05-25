@@ -3,9 +3,13 @@ if module_installed AMD-APP-SDK; then
 	REINSTALL_APP=yes
 fi
 
-unpack $SOURCE &&
+mkdir -p $SOURCE_DIRECTORY
 cd $SOURCE_DIRECTORY &&
-./amd-driver-installer-$INNER_VERSION-x86.x86_64.run --extract working &&
+unpack $SOURCE
+
+BINFILE=AMD-Catalyst-$VERSION-Linux-installer-$INNER_VERSION-x86.x86_64.run
+chmod +x $BINFILE
+./$BINFILE --extract working &&
 cd working &&
 patch_it $SCRIPT_DIRECTORY/default_policy_fixed.patch 0 &&
 patch_it $SCRIPT_DIRECTORY/ati-installer-fixed.patch 0
